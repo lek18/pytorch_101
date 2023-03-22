@@ -30,6 +30,7 @@ repos:
     -   id: flake8
         exclude: (^data/)
         language_version: python3.11
+        args: [--max-line-length=88]
 
 -   repo: local
     hooks:
@@ -39,3 +40,16 @@ repos:
         language: system
         types: [python]
         files: .
+-   repo: local
+    hooks:
+    - id: pylint
+      name: pylint
+      entry: pylint
+      language: system
+      types: [python]
+      args:
+        [
+          "-rn", # Only display messages
+          "-sn", # Don't display the score,
+          "--generated-members='torch.*'", # pytorch to look for both torch and torch._C
+        ]

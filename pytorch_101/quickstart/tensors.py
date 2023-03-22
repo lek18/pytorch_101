@@ -1,3 +1,6 @@
+"""
+Simply tensors 101
+"""
 import numpy as np
 import torch
 
@@ -6,4 +9,4 @@ x_data = torch.tensor(data)
 
 
 np_array = np.array(data)
-x_np = torch.from_numpy(np_array)
+x_np = torch.as_tensor(np_array)
