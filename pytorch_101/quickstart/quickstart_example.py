@@ -73,7 +73,7 @@ optimizer = torch.optim.SGD(model.parameters(), lr=1e-3)
 # define train and tes
 
 
-def train(dataloader, model, loss_fn, optimizer):
+def train(dataloader: datasets, model, loss_fn, optimizer) -> None:
     size = len(dataloader.dataset)
     model.train()
     for batch, (X, y) in enumerate(dataloader):
@@ -97,7 +97,7 @@ def test(dataloader, model, loss_fn):
     size = len(dataloader.dataset)
     num_batches = len(dataloader)
     model.eval()
-    test_loss, correct = 0, 0
+    test_loss, correct = 0.0, 0.0
     with torch.no_grad():
         for X, y in dataloader:
             X, y = X.to(device), y.to(device)
