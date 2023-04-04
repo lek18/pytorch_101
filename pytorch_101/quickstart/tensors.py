@@ -44,8 +44,8 @@ print(f"Device tensor is stored on: {tensor.device}")
 # Examples of last data.
 data1 = torch.arange(0, 100)
 
-data1.reshape(2, 2, 5, 5)
+data2 = data1.reshape(2, 2, 5, 5)
 
-# print(x_data1[..., -1])
+print(data2[..., -1])
 
-# print(x_data1[:, -1])
+print(data2[:, -1])
